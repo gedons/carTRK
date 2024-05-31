@@ -56,7 +56,7 @@
   <script>
 import axios from 'axios';
 import { io } from 'socket.io-client';
-import Navbar from '../components/Navbar.vue';
+import Navbar from '../components/NavBar.vue';
 
 export default {
   components: { Navbar },
