@@ -6,7 +6,7 @@
   </template>
   
   <script>
-  import Navbar from '../components/NavBar.vue';
+   import Navbar from '../components/Navbar.vue';
   import LoginForm from '../components/LoginForm.vue';
   
   export default {
