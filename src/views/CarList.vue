@@ -48,7 +48,7 @@
     methods: {
         async fetchcars() {
             try {
-                const response = await axios.get('http://localhost:5000/api/cars', {
+                const response = await axios.get('https://cartrk-api.onrender.com/api/cars', {
                 headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
                 });
                 this.cars = response.data;
@@ -58,7 +58,7 @@
         },
       async deleteCar(id) {
         try {
-          await axios.delete(`http://localhost:5000/api/cars/${id}`, {
+          await axios.delete(`https://cartrk-api.onrender.com/api/cars/${id}`, {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
           });
           this.cars = this.cars.filter(car => car._id !== id);

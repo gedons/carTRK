@@ -64,7 +64,7 @@
       async addCar() {
         try {
           await axios.post(
-            'http://localhost:5000/api/cars',
+            'https://cartrk-api.onrender.com/api/cars',
             {
               name: this.name,
               model: this.model,

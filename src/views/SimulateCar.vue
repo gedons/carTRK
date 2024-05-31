@@ -76,7 +76,7 @@ export default {
   methods: {
     async trackCar() {
       try {
-        const response = await axios.get(`http://localhost:5000/api/cars/track/${this.licensePlate}`, {
+        const response = await axios.get(`https://cartrk-api.onrender.com/api/cars/track/${this.licensePlate}`, {
           headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
         });
 
@@ -86,7 +86,7 @@ export default {
         this.tracking = true;
         this.initializeMap();
 
-        this.socket = io('http://localhost:5000'); // Ensure this matches your backend URL
+        this.socket = io('https://cartrk-api.onrender.com'); // Ensure this matches your backend URL
         this.socket.on('locationUpdate', async (data) => {
           if (data.licensePlate === this.licensePlate) {
             this.latitude = data.latitude;
@@ -105,7 +105,7 @@ export default {
       ];
 
       try {
-        const response = await axios.post(`http://localhost:5000/api/cars/${this.car._id}/simulate`, {
+        const response = await axios.post(`https://cartrk-api.onrender.com/api/cars/${this.car._id}/simulate`, {
           route,
           interval: 1000 // Update interval in milliseconds
         }, {

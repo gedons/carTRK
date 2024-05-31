@@ -41,7 +41,7 @@
     async created() {
       const id = this.route.params.id;
       try {
-        const response = await axios.get(`http://localhost:5000/api/cars/${id}`, {
+        const response = await axios.get(`https://cartrk-api.onrender.com/api/cars/${id}`, {
           headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
         });
         const car = response.data;       
@@ -63,7 +63,7 @@
         const id = this.route.params.id;
         try {
           await axios.put(
-            `http://localhost:5000/api/cars/${id}/location`,
+            `https://cartrk-api.onrender.com/api/cars/${id}/location`,
             {              
                 latitude: this.latitude,
                 longitude: this.longitude,

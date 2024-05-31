@@ -56,7 +56,7 @@
     async created() {
       const id = this.route.params.id;
       try {
-        const response = await axios.get(`http://localhost:5000/api/cars/${id}`, {
+        const response = await axios.get(`https://cartrk-api.onrender.com/api/cars/${id}`, {
           headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
         });
         const car = response.data;
@@ -81,7 +81,7 @@
         const id = this.route.params.id;
         try {
           await axios.put(
-            `http://localhost:5000/api/cars/${id}`,
+            `https://cartrk-api.onrender.com/api/cars/${id}`,
             {
               name: this.name,
               model: this.model,
